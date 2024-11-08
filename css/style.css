@@ -607,6 +607,7 @@ a {
     border-radius: 22px;
     position: relative;
     box-shadow: 0px 20px 20px 0px #00000015;
+    overflow: hidden;
 }
 
 .destination-content .box:first-child {
@@ -619,6 +620,70 @@ a {
 
 .destination-content .box:last-child {
     background-image: url(../image/Destinations3.jpg);
+
+}
+
+.destination-content .box .hidden-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 50%);
+    border-radius: 22px;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 6rem;
+    transform: translateY(100%);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.destination-content .box:hover .hidden-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.destination-content .box .hidden-content span {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    display: block;
+    margin: 1rem 0;
+}
+
+.destination-content .box .hidden-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e5e6ec;
+}
+
+.destination-content .box .hidden-content .links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+
+}
+
+.destination-content .box .hidden-content .links i {
+    width: 50px;
+    height: 50px;
+    background-color: #E5E5E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    cursor: pointer;
+    transition: var(--main-transition-duration);
+}
+
+.destination-content .box .hidden-content .links i:hover {
+    background-color: var(--red-color);
+    color: white;
 }
 
 .destination-content .box .txt {
@@ -657,14 +722,6 @@ a {
 
 .destination-content .box .txt>div:last-child p {
     font-size: 14px;
-}
-
-.destination-content .box .box-efict {
-    position: absolute;
-    right: -20%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
 }
 
 /* End Destinations section  */
@@ -781,6 +838,8 @@ a {
     border-radius: 10px;
     box-shadow: 1px 10px 20px 20px #00000005;
     position: relative;
+    -webkit-animation: ;
+    animation: top-down 2s linear infinite alternate;
 }
 
 .booking-content .right-content .box>img {
@@ -1067,5 +1126,26 @@ a {
         opacity: 0;
         transform: scale(2)
     }
+}
+
+@-webkit-keyframes top-down {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-1rem);
+    }
+}
+
+@keyframes top-down {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-1rem);
+    }
+}
 }
 }
