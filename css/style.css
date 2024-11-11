@@ -1254,7 +1254,6 @@ a {
 /* Start Footer Section  */
 .footer-section {
     padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
 }
 
 .footer-section .footer-content .row {
